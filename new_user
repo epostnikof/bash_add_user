@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
+
+shell=/sbin/nologin
+
 echo Welcome!
 read -p "Print username: " user
 read -p "Print groupname: " group
 
 groupadd $group
-cp /etc/sudoers{,.bkp}
-echo '%'$group 'ALL=(ALL) ALL' >> /etc/sudoers
+if [ "$group" = it ]
+then
+  cp /etc/sudoers{,.bkp}
+  echo '%'$group 'ALL=(ALL) ALL' >> /etc/sudoers
+  shell=/bin/bash
+fi
 mkdir /home/$group
-useradd $user -g $group -b /home/$group -s /bin/bash
+useradd $user -g $group -b /home/$group -s $shell
