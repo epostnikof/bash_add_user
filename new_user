@@ -7,4 +7,4 @@ groupadd $group
 cp /etc/sudoers{,.bkp}
 echo '%' $group 'ALL=(ALL) ALL' >> /etc/sudoers
 mkdir /home/$group
-useradd $user1 -g $group -b /home/$group -s /bin/bash
+useradd $user -g $group -b /home/$group -s /bin/bash
