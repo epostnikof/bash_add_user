@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-
-user=$1
-group=$2
+echo Welcome!
+read -p "Print username: " user
+read -p "Print groupname: " group
 
 groupadd $group
 cp /etc/sudoers{,.bkp}
