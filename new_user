@@ -5,6 +5,6 @@ read -p "Print groupname: " group
 
 groupadd $group
 cp /etc/sudoers{,.bkp}
-echo '%' $group 'ALL=(ALL) ALL' >> /etc/sudoers
+echo '%'$group 'ALL=(ALL) ALL' >> /etc/sudoers
 mkdir /home/$group
 useradd $user -g $group -b /home/$group -s /bin/bash
