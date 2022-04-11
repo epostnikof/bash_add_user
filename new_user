@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 groupadd it
+cp /etc/sudoers{,.bkp}
 echo '%it ALL=(ALL) ALL' >> /etc/sudoers
 mkdir /home/{it, users}
 useradd user1 -g it -b /home/it -s /bin/bash
