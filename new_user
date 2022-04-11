@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-user2=$1
-group1=$2
+user=$1
+group=$2
 
-groupadd $group1
+groupadd $group
 cp /etc/sudoers{,.bkp}
-echo '%' $group1 'ALL=(ALL) ALL' >> /etc/sudoers
-mkdir /home/{$group1}
-useradd $user1 -g $group1 -b /home/$group1 -s /bin/bash
+echo '%' $group 'ALL=(ALL) ALL' >> /etc/sudoers
+mkdir /home/$group
+useradd $user1 -g $group -b /home/$group -s /bin/bash
