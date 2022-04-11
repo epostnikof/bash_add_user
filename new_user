@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
-groupadd it
+user2=$1
+group1=$2
+
+groupadd $group1
 cp /etc/sudoers{,.bkp}
-echo '%it ALL=(ALL) ALL' >> /etc/sudoers
-mkdir /home/{it, users}
-useradd user1 -g it -b /home/it -s /bin/bash
-useradd user2 -g users -b /home/users -s /sbin/nologin
+echo '%' $group1 'ALL=(ALL) ALL' >> /etc/sudoers
+mkdir /home/{$group1}
+useradd $user1 -g $group1 -b /home/$group1 -s /bin/bash
