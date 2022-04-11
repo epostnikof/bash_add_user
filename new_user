@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 sudo groupadd it
-sudo echo %it ALL=(ALL) ALL
+sudo echo '%it ALL=(ALL) ALL' >> /etc/sudoers
 sudo mkdir /home/{it, users}
 sudo useradd user1 -g it -b /home/it -s /bin/bash
 sudo useradd user2 -g users -b /home/users -s /sbin/nologin
